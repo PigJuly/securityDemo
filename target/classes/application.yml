@@ -1,0 +1,21 @@
+server:
+  port: 8090
+spring:
+  datasource: #数据库源
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/elevator?serverTimezone=UTC
+    username: root
+    password: 123456
+  jpa: #jpa数据操作
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+    show-sql: true
+    database: mysql
+    generate-ddl: true
+jwt:
+  header: jwtHeader
+  secret: eyJleHAiOjE1NDMyMDUyODUsInN1YiI6ImFkbWluIiwiY3JlYXRlZCI6MTU0MDYxMzI4N
+  expiration: 50000   #毫秒
